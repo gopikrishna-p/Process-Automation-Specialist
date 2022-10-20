@@ -1,0 +1,113 @@
+SETUP -> OBJECT MANAGER -> Account -> Fields & Relationships -> New
+
+Data Type      : Roll-Up Summary
+Field Label    : Number of deals
+Field Name     : Number_of_deals      
+        Click "Next"
+Summarized Object    : Opportunities
+Select Roll-Up Type  : COUNT
+Filter Criteria      : All records should be included in the calculation
+        Click "Next"
+        Click "Next"
+        Click "Save & New"
+-------------------------------------------------------------------------------------------------     
+Data Type      : Roll-Up Summary
+Field Label    : Number of won deals
+Field Name     : Number_of_won_deals      
+        Click "Next"
+Summarized Object    : Opportunities
+Select Roll-Up Type  : COUNT
+Filter Criteria      : Only records meeting certain criteria should be included in the calculation
+
+          Field                     Operator                 	Value
+      --------------------------------------------------------------------
+          Stage                     equals                  Closed Won
+      --------------------------------------------------------------------   
+        Click "Next"
+        Click "Next"
+        Click "Save & New"
+------------------------------------------------------------------------------------------------
+
+Data Type      : Roll-Up Summary
+Field Label    : Last won deal date
+Field Name     : Last_won_deal_date      
+        Click "Next"
+Summarized Object    : Opportunities
+Select Roll-Up Type  : MAX
+Field to Aggregate   : Close Date
+Filter Criteria      : Only records meeting certain criteria should be included in the calculation
+
+          Field                     Operator                 	Value
+      --------------------------------------------------------------------
+          Stage                     equals                  Closed Won
+      --------------------------------------------------------------------  
+        Click "Next"
+        Click "Next"
+        Click "Save & New"
+--------------------------------------------------------------------------------------------------
+Data Type           : Formula
+Field Label         : Deal win percent
+Field Name          : Deal_win_percent   
+Formula Return Type : Percent
+        Click "Next"
+Deal win percent (Percent) =   Number_of_won_deals__c / Number_of_deals__c 
+        Click "Next"
+        Click "Next"
+        Click "Save & New"
+--------------------------------------------------------------------------------------------------
+Data Type      : Roll-Up Summary
+Field Label    : Amount of won deals
+Field Name     : Amount_of_won_deals      
+        Click "Next"
+Summarized Object    : Opportunities
+Select Roll-Up Type  : SUM
+Field to Aggregate   : Amount
+Filter Criteria      : Only records meeting certain criteria should be included in the calculation
+
+          Field                     Operator                 	Value
+      --------------------------------------------------------------------
+          Stage                     equals                  Closed Won
+      --------------------------------------------------------------------  
+        Click "Next"
+        Click "Next"
+        Click "Save & New"     
+----------------------------------------------------------------------------------------------------
+Data Type           : Formula
+Field Label         : Call for Service
+Field Name          : Call_for_Service    
+Formula Return Type : Text
+        Click "Next"
+Deal win percent (Percent) =    IF(DATE(YEAR(Last_won_deal_date__c) + 2,MONTH(Last_won_deal_date__c),DAY(Last_won_deal_date__c)) <=TODAY(),"YES", "NO")
+        Click "Next"
+        Click "Next"
+        Click "Save & New"
+-----------------------------------------------------------------------------------------------------
+                             
+SETUP -> OBJECT MANAGER -> Account -> Validation Rules -> New
+
+Rule Name               : ValidationForBilling
+Error Condition Formula : 
+-------------------------
+OR(
+NOT(CONTAINS("AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:IN:IA:KS:KY:LA:ME:MD:MA:MI:MN:MS:MO:MT:NE:NV:NH:NJ:NM:NY:NC:ND:OH:OK:OR:PA:RI:SC:SD:TN:TX:UT:VT:VA:WA:WV:WI:WY", BillingState)),
+LEN(BillingState) <> 2, 
+NOT(OR(BillingCountry ="US",BillingCountry ="USA",BillingCountry ="United States", ISBLANK(BillingCountry))),
+NOT(CONTAINS("AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:IN:IA:KS:KY:LA:ME:MD:MA:MI:MN:MS:MO:MT:NE:NV:NH:NJ:NM:NY:NC:ND:OH:OK:OR:PA:RI:SC:SD:TN:TX:UT:VT:VA:WA:WV:WI:WY", ShippingState)),
+LEN(ShippingState) <> 2, 
+NOT(OR(ShippingCountry ="US",ShippingCountry ="USA",ShippingCountry ="United States", ISBLANK(ShippingCountry )))
+)
+-------------------------
+Error Message          : You have to make sure that nobody can save a new account unless the shipping and billing state fields are valid US state abbreviations, and the country field is either blank or US, USA, or Unites States.
+
+        Click "Save & New"
+------------------------------------------------------------------------------------------------------
+Rule Name               : ValidationForType
+Error Condition Formula : 
+-------------------------
+ISCHANGED(Name) && (OR(ISPICKVAL(Type, 'Customer - Direct'), ISPICKVAL(Type, 'Customer - Channel')))
+-------------------------
+Error Message          : the account type is either "customer - Direct" or "Customer - Channel" we don't want anybody to change the name.
+
+        Click "Save"
+
+
