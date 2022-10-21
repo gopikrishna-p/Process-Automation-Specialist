@@ -1,0 +1,45 @@
+
+SETUP -> Object Manager -> New Custom Object
+Label           : Robot Setup
+Plural Label    : Robot Setups
+Object Name     : Robot_Setup
+Data Type	      : Auto Number
+Display Format	: ROBOT SETUP-{0000}
+Starting Number	: 0
+     Click "Save"
+
+SETUP -> OBJECT MANAGER -> Robot Setup -> New 
+Data Type	      : Date
+Field Label     : Date
+Field Name      : Date                      -> Click "Next"  ->  Click "Next"  ->  Click "Save"
+----------------------------------------------------------------------------------------------
+Data Type	      : Text
+Field Label     : Notes
+Length          : 100
+Field Name      : Notes                     -> Click "Next"  ->  Click "Next"  ->  Click "Save"
+----------------------------------------------------------------------------------------------
+Data Type	          : Formula
+Field Label         : Day of the Week
+Formula Return Type : Text
+Field Name          : Day_of_the_Week       
+Day of the Week (Text) =  
+--------------------------
+CASE(weekday(Date__c),
+1,"Sunday",
+2,"Monday",
+3,"Tuesday",                             
+4,"Wednesday",
+5,"Thusday",
+6,"Friday",
+7,"Saturday",
+Text(weekday(Date__c))
+)
+-------------------------
+-----------------------------------------------------------------------------------------------
+Data Type	      : Master-Detail Relationship
+Related To      : Opportunity
+Field Label     : Opportunity
+Field Name      : Opportunity                -> Click "Next"  ->  Click "Next"  ->  Click "Save"
+
+
+@tesla
