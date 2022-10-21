@@ -29,8 +29,40 @@ Add to "Available Values"  -> Prospecting (Open, 10%, Pipeline)
 -------------------------------------------------------------------------------------
 OBJECT MANAGER -> Opportunity -> Record Types -> New -> Click "here" to create a sales process -> New                              
 Existing Sales Process   : Master
-Sales Process Name       : RB Robotics Sales Process        Click "Save"
+Sales Process Name       : RB Robotics Process RT
+Record Type Label        : RB_Robotics_Process_RT
+Record Type Name         : RB Robotics Sales Process         Click "Next"
+
+Apply one layout to all profiles  : Opportunity Layout
+Click "Save"
+
+Opportunity -> Fields & Relationships -> New
+Date Type   : Checkbox
+Field Label : Approved
+Field Name  : Approved   
+Click "Next & Next & Save"
+--------------------------------------------------------
+Opportunity -> Validation Rules -> New
+Rule Name                : ValidationForHighRule
+Error Condition Formula  : if((Amount>1000 && Approved__c =false && ispickval(stageName,"Closed Won")),true,false)
+Error Message            : Cannot have validation rule
+
+
                               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
