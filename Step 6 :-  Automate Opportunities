@@ -1,7 +1,32 @@
 
+SETUP -> HOME -> Users -> New User
+First Name	   : Nushi
+Last Name      : Davoud
+Alias          : ND
+Email          : "Give a uniqu email id"
+Username       : "Give a uniqu email id"
+Nickname       : <Your Choice>
+User License	 : Salesforce
+Profile	       : Contract Manager
+---------------------------------------------
+SETUP -> HOME -> Email Alerts ->   "Don't show me this page again" -> Continue -> New Email Alert
+Description        : Finance: Account Creation
+Unique Name        : Finance_Account_Creation
+Object             : Opportunity
+Email Template     : <Robotics Sales Process> Select "Finance: Account Creation"
+Selected Recipients: User: Integration User
+                     User: Nushi Davoud
+                     User: <Your Name Field>
+                     
 
-----------------------------------------COMING SOON--------------------------------------
+
+
 
 
 
 @tesla
+
+
+
+
+
