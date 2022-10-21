@@ -1,0 +1,36 @@
+SETUP -> HOME -> OBJECT MANAGER -> Opportunity -> Record Types -> New -> Click "here" to create a sales process -> New
+
+Existing Sales Process   : Master
+Sales Process Name       : RB Robotics Sales Process        Click "Save"
+
+Available Values   : Prospecting (Open, 10%, Pipeline)
+                     Qualification (Open, 10%, Pipeline)
+                     Proposal/Price Quote (Open, 75%, Pipeline)               
+                     Negotiation/Review (Open, 90%, Pipeline)
+                     Closed Won (Closed/Won, 100%, Closed)
+                     Closed Lost (Closed/Lost, 0%, Omitted)	
+Click "Save"
+----------------------------------------------------------------------------------
+OBJECT MANAGER -> Opportunity -> Fields & Relationships -> Stage -> Opportunity Stages Picklist Values -> New
+Stage Name   : Awaiting Approval
+Probability  : 100%
+Scrool Down You Find -> To add the new value to the picklist values for a particular Sales Process, check the appropriate boxes below.
+                     -> Select  "Sales Processes" & "RB Robotics Sales Process"
+Click "Save"
+------------------------------------------------------------------------------------
+HOME -> search "Sales Processes" -> click on "RB Robotics Sales Process" 
+Add to "Available Values"  -> Prospecting (Open, 10%, Pipeline)
+                              Qualification (Open, 10%, Pipeline)
+                              Proposal/Price Quote (Open, 75%, Pipeline)               
+                              Negotiation/Review (Open, 90%, Pipeline)
+                              Closed Won (Closed/Won, 100%, Closed)
+                              Closed Lost (Closed/Lost, 0%, Omitted)	
+                              Awaiting Approval(Open, 100%, Piprline)
+-------------------------------------------------------------------------------------
+OBJECT MANAGER -> Opportunity -> Record Types -> New -> Click "here" to create a sales process -> New                              
+Existing Sales Process   : Master
+Sales Process Name       : RB Robotics Sales Process        Click "Save"
+                              
+
+
+
