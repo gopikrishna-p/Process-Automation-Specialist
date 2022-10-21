@@ -92,9 +92,56 @@ A specific value      : Negotiation/Review
 Click "Save"
 -----------------------------------------
 ---Click "Activate" On Top Of The Page---
+___________________________________________________________________________________________________________________________________________________________________________________
+SETUP -> HOME -> Process Builder -> New -> Continue in Process Builder
 
+Add Object
+----------
+          Object            : Opportunity
+          Start the process : "when a record is created or edited"
+          Click "Save"
+_________________________________________________________________________________
+Add Criteria
+------------
+          Criteria Name   : CustomAccount
+          Set Conditions  :     Field                                   Operator               Type                	Value
+                            ------------------------------------------------------------------------------------------------------------
+                            Account ID -> Account Type                  Equals                Picklist             Customer - Direct
+                            Account ID -> Account ID                    Does not equal        Global Constant      $GlobalConstant.Null
+Click "Save"
+__________________________________________________________________________________
+IMMEDIATE ACTIONS
+-----------------
+1)        Action Type   : Email Alerts
+          Action Name   : emailAlert
+          Email Alert   : Finance: Account Creation
+Click "Save"
+___________________________________________________________________________________
+Add Criteria
+------------
+          Criteria Name   : ProspectAccount
+          Set Conditions  :     Field                                   Operator               Type                	Value
+                            ------------------------------------------------------------------------------------------------------------
+                            Account ID -> Account Type                  Equals                Picklist             Prospect
+                            Stage                                       Equals                Picklist             Prospecting
+                            Account ID -> Account ID                    Does not equal        Global Constant      $GlobalConstant.Null
+Click "Save"
+____________________________________________________________________________________
+IMMEDIATE ACTIONS
+-----------------
+1)        Action Type   : Email Alerts
+          Action Name   : emailAlert
+          Email Alert   : Finance: Account Creation
+Click "Save"
 
-                      
+2)        Action Type      : Creat a Record
+          Action Name      : Create Task
+          Record Type      : Task
+          Set Field Values :     Field                    Type                	 Value
+                            ------------------------------------------------------------
+                            Assigned To ID                Field Reference       Owner ID
+                            
+Click "Save"
 
 
 
