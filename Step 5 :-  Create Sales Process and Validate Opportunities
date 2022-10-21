@@ -47,3 +47,4 @@ Rule Name                : ValidationForHighRule
 Error Condition Formula  : if((Amount>1000 && Approved__c =false && ispickval(stageName,"Closed Won")),true,false)
 Error Message            : Cannot have validation rule
 
+@tesla
