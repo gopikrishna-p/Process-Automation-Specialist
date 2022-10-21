@@ -16,8 +16,112 @@ Object             : Opportunity
 Email Template     : <Robotics Sales Process> Select "Finance: Account Creation"
 Selected Recipients: User: Integration User
                      User: Nushi Davoud
+                     User: <Your Name Field>            
+Click "Save & New"
+-----------------------------------------------------------------------------------------
+HOME -> Email Alerts ->   "Don't show me this page again" -> Continue -> New Email Alert
+Description        : SALES: Opportunity Needs Approval
+Unique Name        : SALES_Opportunity_Needs_Approval
+Object             : Opportunity
+Email Template     : <Robotics Sales Process> Select "SALES: Opportunity Needs Approval"
+Selected Recipients: User: Integration User
+                     User: Nushi Davoud
                      User: <Your Name Field>
-                     
+Click "Save & New"
+-----------------------------------------------------------------------------------------
+HOME -> Email Alerts ->   "Don't show me this page again" -> Continue -> New Email Alert
+Description        : Sales: Opportunity Approval Status Email
+Unique Name        : Sales_Opportunity_Approval_Status_Email
+Object             : Opportunity
+Email Template     : <Robotics Sales Process> Select "Sales: Opportunity Approval Status Email"
+Selected Recipients: User: Integration User
+                     User: Nushi Davoud
+                     User: <Your Name Field>
+Click "Save & New"
+------------------------------------------------------------------------------------------
+HOME -> Email Alerts -> Approval Processes -> Create New Approval Process -> "Use Jump Start Wizard"
+Name	          : prospect
+Unique Name     : prospect
+Specify Entry Criteria   :     Field	                   	Operator	                Value
+                          ----------------------------------------------------------------
+                           Opportunity :Amount           greather than             100000
+                           Opportunity :Amount           equals                    Negotiation/Review
+                           
+Click    "View Approval Process Details Page"
+----------------------------------------
+Edit  -> Initial Submitters
+Search              : User
+Allowed Submitters  : Opportunity Owner
+                      User: Nushi Davoud
+                      User: <Your Name Field>
+-----------------------------------------
+Edit               -> Approver Field and Record Editability Properties
+Next Automated Approver Determined By  : Manager
+Click "Save"
+----------------------------------------
+ON  "Approval Steps"
+Click Edit "Step1"
+Name                  : Step1
+Unique Name           : Step1       
+Click "Next"
+Specify Step Criteria : All records should enter this step.
+Click "Next"
+Select Approver  : Automatically assign to approver(s).
+                   User   -  Nushi Davoud
+Click "Save"
+----------------------------------------
+ON  "Initial Submission Actions"  -> Add New -> Field Update
+Name                  : update
+Unique Name           : update
+Field to Update       : Stage
+A specific value      : prospecting
+Click "Save"
+---------------------------------------
+ON  "Final Approval Actions"  -> Add New -> Field Update
+Name                  : windeal
+Unique Name           : windeal
+Field to Update       : Stage
+A specific value      : Closed Won
+Click "Save"
+----------------------------------------
+ON  "Final Rejection Actions"  -> Add New -> Field Update
+Name                  : negotiate
+Unique Name           : negotiate
+Field to Update       : Stage
+A specific value      : Negotiation/Review
+Click "Save"
+-----------------------------------------
+---Click "Activate" On Top Of The Page---
+
+
+                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
