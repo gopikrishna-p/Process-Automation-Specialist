@@ -45,7 +45,7 @@ Unique Name     : prospect
 Specify Entry Criteria   :     Field	                   	Operator	                Value
                           ----------------------------------------------------------------
                            Opportunity :Amount           greather than             100000                                  
-                           Opportunity :Amount           equals                    Negotiation/Review
+                           Opportunity :stage            equals                    Negotiation/Review
                            
 Click    "View Approval Process Details Page"
 ----------------------------------------
