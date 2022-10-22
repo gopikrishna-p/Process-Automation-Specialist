@@ -44,7 +44,7 @@ Name	          : prospect
 Unique Name     : prospect
 Specify Entry Criteria   :     Field	                   	Operator	                Value
                           ----------------------------------------------------------------
-                           Opportunity :Amount           greather than             100000
+                           Opportunity :Amount           greather than             100000                                  1111111111111111111111
                            Opportunity :Amount           equals                    Negotiation/Review
                            
 Click    "View Approval Process Details Page"
@@ -73,7 +73,7 @@ Click "Save"
 ON  "Initial Submission Actions"  -> Add New -> Field Update
 Name                  : update
 Unique Name           : update
-Field to Update       : Stage
+Field to Update       : Stage                                                                222222222222222222222222222
 A specific value      : prospecting
 Click "Save"
 ---------------------------------------
@@ -140,22 +140,62 @@ Click "Save"
           Set Field Values :     Field                    Type                	 Value
                             ------------------------------------------------------------
                             Assigned To ID                Field Reference       Owner ID
-                            
+                            Priority                      Picklist              High
+                            Status                        Picklist              In Progress
+                            Related To ID                 Field Reference       Opportunity Id
+                            Subject                       String                Send Marketing Materials
+                            Due Date Only                 Formula               TODAY() + 7                            
+Click "Save"
+____________________________________________________________________________________
+Add Criteria
+------------
+          Criteria Name   : Negotiation
+          Set Conditions  :     Field                                   Operator               Type                	Value
+                            ------------------------------------------------------------------------------------------------------------
+                                Stage                                   Equals                 Picklist             Negotiation/Review
+                                Amount                                  Greater than           Currency             $100,000                      1111111111111111111
+Click "Save"
+_____________________________________________________________________________________
+IMMEDIATE ACTIONS
+-----------------
+1)        Action Type      : Submit for Approval
+          Action Name      : approval
+          Approval Process : Specific Approval Process -> prospect-prospect
 Click "Save"
 
+2)        Action Type      : Update Records
+          Action Name      : updateStage
+          Record Type      : Select the Opportunity record that started your process
+          Set Field Values :     Field                    Type                	 Value
+                            -----------------------------------------------------------------
+                                 Stage                    Picklist           Awating Approval                              22222222222222222222222
+Click "Save"    
+______________________________________________________________________________________
+Add Criteria
+------------
+          Criteria Name   : Close
+          Set Conditions  :     Field                                   Operator               Type                	Value
+                            ------------------------------------------------------------------------------------------------------------
+                                Stage                                   Equals                 Picklist             Closed Won
+Click "Save"  
+______________________________________________________________________________________
+IMMEDIATE ACTIONS
+-----------------
+1)        Action Type      : Email Alerts
+          Action Name      : emailAlerts
+          Email Alert      : Finance: Account Creation
+Click "Save"
 
-
-
-
-
-
-
-
-
-
-
-
-
+2)        Action Type      : Creat a Record
+          Action Name      : setRecord
+          Record Type      : Robot Setup
+          Set Field Values :     Field                    Type                	 Value
+                            ------------------------------------------------------------
+                              Opportunity                Field Reference       Opportunity ID
+                              Date                       Formula               [Opportunity].CloseDate + 180     
+Click "Save"
+______________________________________________________________________________________
+Click "Activate"  on Top Right of The Page
 
 
 
