@@ -94,6 +94,10 @@ Click "Save"
 ---Click "Activate" On Top Of The Page---
 ___________________________________________________________________________________________________________________________________________________________________________________
 SETUP -> HOME -> Process Builder -> New -> Continue in Process Builder
+Process Name              : OpportunityProcess
+API Name                  : OpportunityProcess
+The process starts when   : A Record Changes
+Click "Save"
 
 Add Object
 ----------
