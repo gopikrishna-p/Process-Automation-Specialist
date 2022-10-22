@@ -44,7 +44,7 @@ Name	          : prospect
 Unique Name     : prospect
 Specify Entry Criteria   :     Field	                   	Operator	                Value
                           ----------------------------------------------------------------
-                           Opportunity :Amount           greather than             100000                                  1111111111111111111111
+                           Opportunity :Amount           greather than             100000                                  
                            Opportunity :Amount           equals                    Negotiation/Review
                            
 Click    "View Approval Process Details Page"
@@ -73,7 +73,7 @@ Click "Save"
 ON  "Initial Submission Actions"  -> Add New -> Field Update
 Name                  : update
 Unique Name           : update
-Field to Update       : Stage                                                                222222222222222222222222222
+Field to Update       : Stage                                                                
 A specific value      : prospecting
 Click "Save"
 ---------------------------------------
@@ -153,7 +153,7 @@ Add Criteria
           Set Conditions  :     Field                                   Operator               Type                	Value
                             ------------------------------------------------------------------------------------------------------------
                                 Stage                                   Equals                 Picklist             Negotiation/Review
-                                Amount                                  Greater than           Currency             $100,000                      1111111111111111111
+                                Amount                                  Greater than           Currency             $100,000                      
 Click "Save"
 _____________________________________________________________________________________
 IMMEDIATE ACTIONS
@@ -168,7 +168,7 @@ Click "Save"
           Record Type      : Select the Opportunity record that started your process
           Set Field Values :     Field                    Type                	 Value
                             -----------------------------------------------------------------
-                                 Stage                    Picklist           Awating Approval                              22222222222222222222222
+                                 Stage                    Picklist           Awating Approval                              
 Click "Save"    
 ______________________________________________________________________________________
 Add Criteria
@@ -194,30 +194,19 @@ Click "Save"
                               Opportunity                Field Reference       Opportunity ID
                               Date                       Formula               [Opportunity].CloseDate + 180     
 Click "Save"
-______________________________________________________________________________________
+-----------------------------------------------------------------------------------------------------------------
 Click "Activate"  on Top Right of The Page
 
+_________________________________________________________________________________________________________________________________________________________________________
+OBJECT MANAGER -> Account -> Validation Rules      -> "DeActive"  All Rules
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+OBJECT MANAGER -> Opportunity -> Validation Rules  -> "DeActive"  All Rules
 
 
 
 
 @tesla
-
-
 
 
 
