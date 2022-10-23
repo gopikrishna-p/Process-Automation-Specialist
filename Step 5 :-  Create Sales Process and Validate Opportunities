@@ -31,6 +31,7 @@ OBJECT MANAGER -> Opportunity -> Record Types -> New -> Click "here" to create a
 Existing Sales Process   : Master
 Sales Process Name       : RB Robotics Process RT
 Record Type Label        : RB_Robotics_Process_RT
+Sales Process            : RB Robotics Sales Process
 Record Type Name         : RB Robotics Sales Process         Click "Next"
 
 Apply one layout to all profiles  : Opportunity Layout
