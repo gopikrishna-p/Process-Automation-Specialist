@@ -35,7 +35,7 @@ Click Finish on [Flow Lable]
 _________________________________________________________
 Add "+" icon on between the Product Quick Search & End
 
-Select  -> Records
+Select  -> Get Records
 Label                  : Search
 API Name               : Search
 Object                 : Product
@@ -50,6 +50,7 @@ How to Store Record Data   : Choose fields and assign variables (advanced)
 Record Collection          :  "New Product"   -> New Resource
                                Resource Type  : Variable
                                API Name       : filterproduct
+                               Data Type      : Record
                               "Allow multiple values (collection)"
                                Object                 : Product
                                                         Product2
@@ -63,8 +64,10 @@ Select "Loop"
 Label      : Get Product
 API Name   : Get_Product
 Collection Variable  : filterproduct
+Click "Done"
 _______________________________________________________________
 Add "+" icon on behind the "loop"
+Select "Assignment"
 Label                  : assign
 API Name               : assign
 Set Variable Values    :     Variable                   
@@ -78,6 +81,7 @@ Set Variable Values    :     Variable
                                 Click "Done"
 _______________________________________________________________
 Add "+" icon on before the "End"
+Select "Screen"
 Label     : screenresult
 API Name  : screenresult
 Add a component "DisplayText" On Left Side Of The Screen
