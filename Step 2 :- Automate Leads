@@ -1,6 +1,6 @@
 
 SETUP -> OBJECT MANAGER -> Lead -> Validation Rules -> New ->
-Rule Name                :  "Any-Name"
+Rule Name                :  "Any-Name" (CheckifUsOrNot)
 Error Condition Formula  : 
 ---------------------------------------------------------------
 OR(
