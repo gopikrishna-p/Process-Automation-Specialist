@@ -208,9 +208,12 @@ OBJECT MANAGER -> Account -> Validation Rules      -> "DeActive"  All Rules
 OBJECT MANAGER -> Opportunity -> Validation Rules  -> "DeActive"  All Rules
 
 
-
+CASE(
+MOD([Opportunity].CloseDate + 180 - DATE(1900, 1, 7),7),
+ 0, [Opportunity].CloseDate + 181, 
+ 6, [Opportunity].CloseDate + 182, 
+ [Opportunity].CloseDate + 180
+)
 
 @tesla
-
-
 
