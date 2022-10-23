@@ -56,32 +56,57 @@ Record Collection          :  "New Product"   -> New Resource
 Click "Done"
 Field            : Name
 Click "Done"
+_____________________________________________________________
+Add "+" icon on between the "Search" & "End"
+Select "Loop"
 
+Label      : Get Product
+API Name   : Get_Product
+Collection Variable  : filterproduct
+_______________________________________________________________
+Add "+" icon on behind the "loop"
+Label                  : assign
+API Name               : assign
+Set Variable Values    :     Variable                   
+                         ----------------------------------
+                             New Resource
+                                Resource Type : Variable
+                                API Name      : loopRecords        
+                                Data Type     : Text
+                                Default Value : Search
+                                Click "Done"
+                                Click "Done"
+_______________________________________________________________
+Add "+" icon on before the "End"
+Label     : screenresult
+API Name  : screenresult
+Add a component "DisplayText" On Left Side Of The Screen
+API Name          : result
+Insert a Resource : looprecord
+Click "Finish"
+Click "Done"
+________________________________________________________________
+Click "Save" on top Right of the Page
+Flow Label      : Product Quick Search  
+Flow API Name   : Product_Quick_Search
+Click "Save"
+Click "Activate"
+________________________________________________________________
 
+HOME -> SETUP -> Lightning App Builder -> New -> Record Page
 
+Lable  : Product Quick Search
+Object : Opportunity
+Click "Next"
+Select  "Grouped Header and One Region"
+Click "Next"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+On Left Side of Screen -> Add "Flow" Component
+                          Flow : Product Quick Search
+                          Click "Save"
+                          Click "Activate" -> Desktop And Phone
+                          
+                          
 @tesla
+
+
