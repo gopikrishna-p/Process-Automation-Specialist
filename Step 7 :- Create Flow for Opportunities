@@ -1,5 +1,87 @@
 
+HOME -> SETUP -> Flows -> New Flow -> Screen Flow
 
-------------------------------------COMING SOON--------------------------------
+Click "+" icon on Window Screen
+Select "Screen" Option
+
+Lable         : Product Quick Search
+API Name      : Product_Quick_Search
+Add a component "RadioButtons" On Left Side Of The Screen
+
+Lable         : products
+API Name      : products
+Choice    -> New Choice Resource 
+Resource Type  : Choice
+API Name       : RainbowBot
+Choice Label   : RainbowBot
+Choice Value   : RainbowBot
+Click "Done"
+
+Add Another Choice . Click "New Choice"
+Resource Type  : Choice
+API Name       : CloudyBot
+Choice Label   : CloudyBot
+Choice Value   : CloudyBot
+Click "Done"
+
+Add Another Choice . Click "New Choice"
+Resource Type  : Choice
+API Name       : Assembly System
+Choice Label   : Assembly System
+Choice Value   : Assembly System
+Click "Done"
+
+Click Finish on [Flow Lable]
+_________________________________________________________
+Add "+" icon on between the Product Quick Search & End
+
+Select  -> Records
+Label                  : Search
+API Name               : Search
+Object                 : Product
+                         Product2
+Condition Requirements : All Conductions are Met(AND)
+                                                         Field               Operator             Value
+                                                      -----------------------------------------------------
+                                                         Name                Contains             Product
+
+How Many Records to Store  : All Records
+How to Store Record Data   : Choose fields and assign variables (advanced)
+Record Collection          :  "New Product"   -> New Resource
+                               Resource Type  : Variable
+                               API Name       : filterproduct
+                              "Allow multiple values (collection)"
+                               Object                 : Product
+                                                        Product2
+Click "Done"
+Field            : Name
+Click "Done"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @tesla
