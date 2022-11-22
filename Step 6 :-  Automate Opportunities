@@ -215,5 +215,5 @@ MOD([Opportunity].CloseDate + 180 - DATE(1900, 1, 7),7),
  [Opportunity].CloseDate + 180
 )
 
-@tesla
+@GK
 
